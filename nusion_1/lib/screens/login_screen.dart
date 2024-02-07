@@ -30,7 +30,7 @@ class LoginScreen extends StatelessWidget {
         ),
         elevatedButtonTheme: ElevatedButtonThemeData(
           style: ButtonStyle(
-            backgroundColor: MaterialStateProperty.all(Colors.deepPurple), // Cambia el color de fondo de los botones aquí
+            backgroundColor: MaterialStateProperty.all(Colors.purple), // Cambia el color de fondo de los botones aquí
             foregroundColor: MaterialStateProperty.all(Colors.white),
             textStyle: MaterialStateProperty.all(TextStyle(fontSize: 20, fontWeight: FontWeight.bold)), // Cambia el tamaño del texto de los botones aquí
           ),
