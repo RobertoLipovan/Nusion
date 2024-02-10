@@ -30,7 +30,7 @@ class LoginScreen extends StatelessWidget {
         ),
         elevatedButtonTheme: ElevatedButtonThemeData(
           style: ButtonStyle(
-            backgroundColor: MaterialStateProperty.all(Colors.purple), // Cambia el color de fondo de los botones aquí
+            backgroundColor: MaterialStateProperty.all(Colors.deepPurple), // Cambia el color de fondo de los botones aquí
             foregroundColor: MaterialStateProperty.all(Colors.white),
             textStyle: MaterialStateProperty.all(TextStyle(fontSize: 20, fontWeight: FontWeight.bold)), // Cambia el tamaño del texto de los botones aquí
           ),
@@ -38,113 +38,129 @@ class LoginScreen extends StatelessWidget {
       ),
       home: Scaffold(
         // backgroundColor: Colors.blue[200],
-        body: Align (
+
+        body: Container(
+
+          decoration: BoxDecoration(
+            gradient: LinearGradient(
+              begin: Alignment.topRight,
+              end: Alignment.bottomCenter,
+              colors: [Colors.blue, Colors.purple],
+            ),
+          ),
+
+          child: Align (
+
           alignment: Alignment.bottomCenter,
           
-        // body: Center(
-          child: FractionallySizedBox(
-            widthFactor: 1.0, // Expande el contenedor en el eje horizontal
-            child: Container(
-              padding: EdgeInsets.all(30),
-              margin: EdgeInsets.all(0),
-              decoration: BoxDecoration(
-                color: Colors.grey[200],
-                borderRadius: BorderRadius.only(
-                  topLeft: Radius.circular(30),
-                  topRight: Radius.circular(30),
+          // body: Center(
+            child: FractionallySizedBox(
+              widthFactor: 1.0, // Expande el contenedor en el eje horizontal
+              child: Container(
+                padding: EdgeInsets.all(30),
+                margin: EdgeInsets.all(0),
+                decoration: BoxDecoration(
+                  color: Colors.white,
+                  borderRadius: BorderRadius.only(
+                    topLeft: Radius.circular(30),
+                    topRight: Radius.circular(30),
+                  ),
+                  boxShadow: List<BoxShadow>.generate(
+                    3,
+                    (index) => BoxShadow(
+                      color: Colors.black.withOpacity(0.08),
+                      blurRadius: 20,
+                      offset: Offset(0, 0),
+                    ),
+                  ),
                 ),
-                boxShadow: List<BoxShadow>.generate(
-                  3,
-                  (index) => BoxShadow(
-                    color: Colors.black.withOpacity(0.08),
-                    blurRadius: 20,
-                    offset: Offset(0, 0),
-                  ),
-                ),
-              ),
-              child: Wrap( // Se adapta al contenido en el eje vertical
-                children: [
-                  Text(
-                    'Iniciar sesión',
-                    style: TextStyle(
-                      fontSize: 40,
-                      fontWeight: FontWeight.bold,
-                    ),
-                  ),
-
-                  Container(
-                    height: 10,
-                  ), 
-
-                  TextField(
-                    keyboardType: TextInputType.emailAddress,
-                    decoration: InputDecoration(
-                      border: OutlineInputBorder(
-                        borderRadius: BorderRadius.circular(50),
-                      ),
-                      hintText: 'Correo electrónico',
-                      contentPadding: EdgeInsets.all(20),
-                    ),
-                  ),
-                  
-                  Container(
-                    height: 10,
-                  ),
-
-                  TextField(
-                    obscureText: true,
-                    decoration: InputDecoration(
-                      border: OutlineInputBorder(
-                        borderRadius: BorderRadius.circular(50),
-                      ),
-                      hintText: 'Contraseña',
-                      contentPadding: EdgeInsets.all(20),
-                    ),
-                  ),
-
-                  Container(
-                    height: 10,
-                  ),
-
-                  ElevatedButton(
-                    onPressed: () {
-                      Navigator.pushReplacement(
-                        context,
-                        MaterialPageRoute(builder: (context) => UserTypeDefinition()),
-                      );
-                    },
-                    child: Text('Iniciar sesión'),
-                    style: ElevatedButton.styleFrom(
-                      minimumSize: Size(double.infinity, 50),
-                      shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(5),
-                      ),
-                    ),
-                  ),
-
-                  Container(
-                    height: 5,
-                  ),
-
-                  GestureDetector(
-                    onTap: () {
-                      Navigator.pushReplacement(
-                        context,
-                        MaterialPageRoute(builder: (context) => SignupScreen()),
-                      );
-                    },
-                    child: Text(
-                      "Registrarse",
+                child: Wrap( // Se adapta al contenido en el eje vertical
+                  children: [
+                    Text(
+                      'Iniciar sesión',
                       style: TextStyle(
-                        decoration: TextDecoration.underline,
+                        fontSize: 40,
+                        fontWeight: FontWeight.bold,
                       ),
                     ),
-                  ),
-                ],
+
+                    Container(
+                      height: 10,
+                    ), 
+
+                    TextField(
+                      keyboardType: TextInputType.emailAddress,
+                      decoration: InputDecoration(
+                        border: OutlineInputBorder(
+                          borderRadius: BorderRadius.circular(50),
+                        ),
+                        hintText: 'Correo electrónico',
+                        contentPadding: EdgeInsets.all(20),
+                      ),
+                    ),
+                    
+                    Container(
+                      height: 10,
+                    ),
+
+                    TextField(
+                      obscureText: true,
+                      decoration: InputDecoration(
+                        border: OutlineInputBorder(
+                          borderRadius: BorderRadius.circular(50),
+                        ),
+                        hintText: 'Contraseña',
+                        contentPadding: EdgeInsets.all(20),
+                      ),
+                    ),
+
+                    Container(
+                      height: 10,
+                    ),
+
+                    ElevatedButton(
+                      onPressed: () {
+                        Navigator.pushReplacement(
+                          context,
+                          MaterialPageRoute(builder: (context) => UserTypeDefinition()),
+                        );
+                      },
+                      child: Text('Iniciar sesión'),
+                      style: ElevatedButton.styleFrom(
+                        minimumSize: Size(double.infinity, 50),
+                        shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(5),
+                        ),
+                      ),
+                    ),
+
+                    Container(
+                      height: 5,
+                    ),
+
+                    GestureDetector(
+                      onTap: () {
+                        Navigator.pushReplacement(
+                          context,
+                          MaterialPageRoute(builder: (context) => SignupScreen()),
+                        );
+                      },
+                      child: Text(
+                        "Registrarse",
+                        style: TextStyle(
+                          decoration: TextDecoration.underline,
+                        ),
+                      ),
+                    ),
+                  ],
+                ),
               ),
             ),
           ),
+
         ),
+
+        
       ),
     );
   }
